@@ -2,11 +2,13 @@
 string userStop = "n";
 do
 {
-    Console.Write("Enter an integer between 1 and 100: ");
+    Console.WriteLine("Please enter your name.");
+        string userName = Console.ReadLine();
+    Console.Write($"{userName}, enter an integer between 1 and 100: ");
     int userInt = int.Parse(Console.ReadLine());
     if (userInt <= 1 || userInt >= 100)
     {
-        Console.WriteLine($"Your number, {userInt}, does not fit the criteria (between 1 and 100).");
+        Console.WriteLine($"{userName}, your number, {userInt}, does not fit the criteria (between 1 and 100).");
     }
     else
     {
@@ -21,7 +23,7 @@ do
         else if ((userInt > 60) && (userInt % 2 != 0))
             Console.WriteLine($"{userInt}: Odd and greater than 60.");
     }
-    Console.WriteLine("Do you want to stop? (Enter y or n) ");
+    Console.WriteLine($"{userName}, Do you want to stop? (Enter y or n) ");
     userStop = Console.ReadLine().ToLower();
 }
 while (userStop == "n");
